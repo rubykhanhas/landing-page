@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css');
+/*  */
+@import 'common';
+/*  */
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Nunito', Helvetica, sans-serif;
+    * {
+        font-size: 1em;
+    }
+}

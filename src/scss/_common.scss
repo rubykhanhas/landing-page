@@ -1,0 +1,50 @@
+@import 'variables';
+
+a,
+a:hover {
+    text-decoration: none;
+    color: initial;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.white-section {
+    background-color: $whiteBG;
+}
+
+.grey-section {
+    background-color: $greyBG;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    outline: none;
+
+    padding: 0.25em 0.5em;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: color 0.2s linear, background-color 0.2s linear,
+        border-color 0.2s linear, box-shadow 0.2s linear;
+
+    &.primary {
+        color: #fff;
+        background-color: #0d6efd;
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 0 4px rgba($color: $primary, $alpha: 0.3);
+        color: $primary;
+
+        &.primary {
+            color: #fff;
+            background-color: darken($color: #0d6efd, $amount: 10%);
+        }
+    }
+}

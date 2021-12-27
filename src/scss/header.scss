@@ -1,4 +1,7 @@
 @import 'variables';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
 
 .topbar {
     font-size: 2rem;
@@ -6,10 +9,18 @@
 
     .container {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         align-items: center;
+        justify-content: space-between;
 
-        padding: 1em 0;
+        padding: 1em 0.5em;
+    }
+
+    @include media-breakpoint-down(xl) {
+        font-size: 1.8rem;
+        .container {
+            font-size: 0.9em;
+        }
     }
 }
 
@@ -21,20 +32,51 @@
     i {
         color: $primary;
     }
+    &:hover,
+    &:visited,
+    &:focus {
+        color: $secondary;
+    }
 }
 
-.nav-bar {
+.navbar {
     flex-grow: 1;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.navbar.mobile {
+    display: none;
+    flex-direction: column;
+    flex-basis: 100%;
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: flex-start;
+        margin-bottom: 1em;
+
+        .nav-item {
+            margin-left: 0;
+            margin-top: 1em;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: flex;
+    }
 }
 
 .main-nav {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
@@ -72,8 +114,28 @@
 
 .button {
     font-weight: 500;
-    color: rgba($color: #000000, $alpha: 0.63);
     text-transform: capitalize;
 
     margin-left: 1em;
+}
+
+.navbar-toggler {
+    display: none;
+    color: $primary;
+    border-color: rgba($color: $primary, $alpha: 0.63);
+
+    i {
+        transition: transform 0.2s linear;
+    }
+
+    &.active {
+        i {
+            display: inline-block;
+            transform: rotate(-90deg);
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: inline-block;
+    }
 }

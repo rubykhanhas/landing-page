@@ -3,7 +3,6 @@
 a,
 a:hover {
     text-decoration: none;
-    color: initial;
 }
 
 ul {
@@ -23,28 +22,40 @@ ul {
     text-align: center;
     vertical-align: middle;
     user-select: none;
-    outline: none;
+    cursor: pointer;
+
+    color: rgba($color: $primary, $alpha: 0.63);
 
     padding: 0.25em 0.5em;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 2px solid currentColor;
     border-radius: 4px;
     transition: color 0.2s linear, background-color 0.2s linear,
         border-color 0.2s linear, box-shadow 0.2s linear;
 
+    &:hover {
+        color: #0d6efd;
+    }
+
+    &:focus,
+    &.active {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba($color: $primary, $alpha: 0.3);
+        color: $primary;
+    }
+    /* Variant */
     &.primary {
         color: #fff;
         background-color: #0d6efd;
-    }
+        border-color: #0d6efd;
 
-    &:hover,
-    &:focus {
-        box-shadow: 0 0 0 4px rgba($color: $primary, $alpha: 0.3);
-        color: $primary;
-
-        &.primary {
+        &:hover {
             color: #fff;
             background-color: darken($color: #0d6efd, $amount: 10%);
+        }
+
+        &:focus {
+            color: #fff;
         }
     }
 }

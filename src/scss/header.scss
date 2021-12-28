@@ -12,6 +12,7 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
+        overflow: hidden;
 
         padding: 1em 0.5em;
     }
@@ -53,9 +54,9 @@
 }
 
 .navbar.mobile {
-    display: none;
     flex-direction: column;
     flex-basis: 100%;
+    display: none;
 
     .main-nav {
         flex-direction: column;
@@ -70,7 +71,10 @@
     }
 
     @include media-breakpoint-down(lg) {
-        display: flex;
+        &.collapsed {
+            display: flex;
+            animation: expand 0.5s linear forwards;
+        }
     }
 }
 
@@ -125,17 +129,32 @@
     border-color: rgba($color: $primary, $alpha: 0.63);
 
     i {
+        display: inline-block;
         transition: transform 0.2s linear;
     }
 
     &.active {
         i {
-            display: inline-block;
             transform: rotate(-90deg);
         }
     }
 
     @include media-breakpoint-down(lg) {
         display: inline-block;
+    }
+}
+
+@keyframes expand {
+    0% {
+        visibility: hidden;
+        max-height: 0px;
+    }
+
+    25% {
+        visibility: visible;
+    }
+
+    100% {
+        max-height: 320px;
     }
 }

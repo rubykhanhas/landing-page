@@ -9,11 +9,11 @@ navLinks.forEach((navLink, index) => {
         if (index != _indexActived) {
             _indexActived = index;
         }
-        toggleClassByIndex(navLinks, 'active', _indexActived);
+        toggleParentClassByIndex(navLinks, 'active', _indexActived);
     });
 });
 
-function toggleClassByIndex(
+function toggleParentClassByIndex(
     collection: NodeListOf<HTMLElement>,
     className: string,
     index: number,
@@ -39,4 +39,16 @@ const navbarMobile = document.querySelector(
 navbarToggler.addEventListener('click', () => {
     navbarToggler.classList.toggle('active');
     navbarMobile.classList.toggle('collapsed');
+});
+
+/* Handle page scroll */
+const header = document.querySelector('header')!;
+
+let prevScrollPos = window.pageYOffset;
+window.addEventListener('scroll', () => {
+    const _currentScrollPos = window.pageYOffset;
+    // scrolldown
+    if (prevScrollPos > _currentScrollPos) header.style.top = '0';
+    else header.style.top = '-8rem';
+    prevScrollPos = _currentScrollPos;
 });

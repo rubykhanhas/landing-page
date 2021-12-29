@@ -1,0 +1,138 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins/breakpoints';
+
+#home {
+    padding: 3em 0;
+    margin-top: 5em;
+
+    .container {
+        .row {
+            align-items: center;
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        font-size: 0.9em;
+    }
+}
+
+.hero {
+    h3 {
+        font-size: 2.5em;
+        font-weight: 700;
+        i {
+            color: #27b36a;
+        }
+    }
+    .hero-text {
+        font-size: 1.2em;
+        font-weight: 400;
+        color: rgba($color: #000000, $alpha: 0.63);
+
+        margin: 1.5em 0;
+    }
+}
+
+.newsletter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    .success-box {
+        color: #27b36a;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1.125em;
+
+        display: none;
+        &.show {
+            display: block;
+        }
+    }
+}
+
+.newsletter-form {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 500px;
+    width: 100%;
+
+    .input-box {
+        position: relative;
+        flex-grow: 2;
+        font-size: 1.2em;
+        font-weight: 400;
+        color: rgba($color: #000000, $alpha: 0.7);
+        box-shadow: 3px 4px 12px rgba($color: #000000, $alpha: 0.1);
+
+        input {
+            color: inherit;
+            border-radius: 5px 0 0 5px;
+            border: none;
+            width: 100%;
+            padding: 0.75em;
+            padding-left: 2.5em;
+
+            &:focus-visible {
+                outline: 2px dash;
+            }
+            &::placeholder {
+                color: rgba($color: #000000, $alpha: 0.4);
+                text-transform: capitalize;
+            }
+        }
+
+        i {
+            color: inherit;
+            font-weight: 200;
+            position: absolute;
+            display: inline-block;
+            padding: 0.75em;
+        }
+    }
+
+    .submit-button {
+        text-transform: uppercase;
+        font-weight: 600;
+        flex-grow: 1;
+
+        border: none;
+        color: #fff;
+        background-color: #e52f37;
+        border-radius: 0 5px 5px 0;
+
+        padding: 0.75em;
+
+        &:hover {
+            background-color: darken($color: #e52f37, $amount: 5%);
+        }
+    }
+}
+
+.newsletter-terms {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    font-size: 0.9em;
+    margin-top: 1em;
+
+    span {
+        margin-top: 0.5em;
+        margin-right: 1em;
+        font-weight: 300;
+        text-transform: capitalize;
+        color: rgba($color: #000000, $alpha: 0.5);
+        i {
+            margin-right: 0.25em;
+            color: #27b36a;
+        }
+    }
+}
+
+//
+.home-image {
+    margin: 1.5em 0;
+    width: 100%;
+    vertical-align: middle;
+}

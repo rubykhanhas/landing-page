@@ -1,10 +1,7 @@
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins/breakpoints';
-
 #home {
     padding: 3em 0;
     margin-top: 5em;
+    background-color: $greyBG;
 
     .container {
         .row {

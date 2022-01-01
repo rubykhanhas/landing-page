@@ -1,6 +1,7 @@
 /* ROOT */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
 //
+@import 'variables';
 @import 'lib';
 @import 'common';
 
@@ -25,3 +26,7 @@ body {
     }
 }
 /* ROOT */
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import './header.scss';
+@import './home.scss';
+@import './about.scss';

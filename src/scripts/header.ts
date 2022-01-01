@@ -47,8 +47,12 @@ const header = document.querySelector('header')!;
 let prevScrollPos = window.pageYOffset;
 window.addEventListener('scroll', () => {
     const _currentScrollPos = window.pageYOffset;
-    // scrolldown
-    if (prevScrollPos > _currentScrollPos) header.style.top = '0';
+    // when scrolldown & menu close
+    if (
+        prevScrollPos > _currentScrollPos ||
+        navbarMobile.classList.contains('collapsed')
+    )
+        header.style.top = '0';
     else header.style.top = '-8rem';
     prevScrollPos = _currentScrollPos;
 });

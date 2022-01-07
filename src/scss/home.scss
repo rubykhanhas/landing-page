@@ -105,6 +105,15 @@
             background-color: darken($color: #e52f37, $amount: 5%);
         }
     }
+
+    @include media-breakpoint-only(xs) {
+        .input-box input {
+            border-radius: 5px 5px 0 0;
+        }
+        .submit-button {
+            border-radius: 0 0 5px 5px;
+        }
+    }
 }
 
 .newsletter-terms {

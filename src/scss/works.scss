@@ -1,0 +1,114 @@
+.works {
+    .row {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.works__desc {
+    h4 {
+        font-size: 2.15em;
+        font-weight: 700;
+        color: $secondary;
+        text-transform: capitalize;
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: 400;
+        color: rgba($color: #000000, $alpha: 0.5);
+
+        margin: 2.5rem 0;
+    }
+
+    .ratings {
+        display: flex;
+        flex-direction: row;
+
+        .platform {
+            .name {
+                font-size: 1.2em;
+                font-weight: 600;
+                color: $secondary;
+            }
+            .stars {
+                display: flex;
+                font-size: 1.125em;
+                color: #fdcc28;
+                letter-spacing: 5px;
+            }
+
+            &:last-child {
+                border-left: 1px solid rgba($color: #000000, $alpha: 0.2);
+                padding-left: 2rem;
+                margin-left: 2rem;
+            }
+        }
+    }
+}
+
+.works__features {
+    .accordion-item {
+        margin: 2rem 0;
+        background-color: #fff;
+        box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: 0.1);
+
+        .clickable {
+            cursor: pointer;
+            user-select: none;
+            font-size: 1.3em;
+            padding: 2rem;
+
+            .circle {
+                display: inline-block;
+                width: 2em;
+                height: 2em;
+                line-height: 2em;
+                text-align: center;
+                color: #27b36a;
+                border: 2px solid;
+                border-radius: 50%;
+            }
+
+            span {
+                color: $secondary;
+                font-weight: 600;
+                text-transform: capitalize;
+                margin-left: 1rem;
+            }
+
+            .right {
+                float: right;
+                line-height: 2em;
+                transition: rotate 0.5s, color 0.5s;
+            }
+
+            &.clicked {
+                .right {
+                    rotate: 180deg;
+                    color: $primary;
+                }
+            }
+        }
+
+        .collapse {
+            display: none;
+            max-height: 0;
+            transition: max-height 1s;
+            overflow-y: hidden;
+
+            padding: 0 2rem;
+            font-size: 1.125em;
+            font-weight: 400;
+            color: rgba($color: #000000, $alpha: 0.68);
+
+            &.collapsed {
+                max-height: 500px;
+            }
+
+            &.display {
+                display: block;
+            }
+        }
+    }
+}

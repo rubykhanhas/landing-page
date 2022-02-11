@@ -56,3 +56,25 @@ window.addEventListener('scroll', () => {
     else header.style.top = '-8rem';
     prevScrollPos = _currentScrollPos;
 });
+
+/* Detect section */
+const MainSections = document.querySelectorAll(
+    'section[id]',
+)! as NodeListOf<HTMLDivElement>;
+let currentSection = 'home';
+
+window.addEventListener('scroll', () => {
+    MainSections.forEach((Section) => {
+        const offset = window.pageYOffset - Section.offsetTop;
+        if (offset > 0 && offset < 100) currentSection = Section.id;
+    });
+
+    navLinks.forEach((navLink) => {
+        //ex: href=#home
+        if (navLink.hash == `#${currentSection}`) {
+            navLink.parentElement?.classList.add('active');
+        } else {
+            navLink.parentElement?.classList.remove('active');
+        }
+    });
+});
